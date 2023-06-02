@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: thistle;
+    
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+header > p{
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0;
+    /* text-decoration: underline; */
+    color: thistle;
+    position: relative;
+    font-size: 3vw;
+}
+header > p::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: red;
+    border-right: 5px solid #01fe87;
+    border-bottom: 5px solid red;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    70%{
+        width: 100%;
+    }
+}
+
+.questions{
+    margin: 0 35px;
+}
+
+.quesAns{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0px;
+}
+.ques{
+    font-size: 19px;
+}
+.seeCode{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+button{
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+
+span{
+    font-weight: bold;
+    font-size: 17px;
+}
+.span{
+    font-size: 20px;
+}
+
+.ans{
+    margin-left: 70px;
+}
+
+#change{
+    cursor: pointer;
+}
+
+.code{
+    display: none;
+}
+/* question 5 */
+#replaceBtn{
+    margin: auto;
+    background-color: green;
+    border: none;
+}
+#replaceBtn:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: green;
+    border: 2px solid green;
+}
+
+/* question 6 */
+.changeStyleDiv{
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+#changeStyleBtn{
+    margin: auto;
+    background-color: teal;
+    border: none;
+}
+#changeStyleBtn:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: teal;
+    border: 2px solid teal;
+}
+
+/* question 7 */
+#cardParent{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: -70px;
+}
+.card{
+    width: 10vw;
+    height: 10vw;
+    border: 2px solid orangered;
+    background-color: orchid;
+    border-radius: 10px;
+}
+#changeDirectionBtn{
+    margin: auto;
+    margin-top: 10px;
+    background-color: peru;
+    border: none;
+    font-size: 17px;
+    padding: 15px;
+}
+#changeDirectionBtn:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: peru;
+    border: 2px solid peru;
+}
+
+/* question 8 */
+
+table{
+    margin-left: 70px;
+}
+th{
+    color: crimson;
+    font-size: 25px;
+    padding: 5px 10px;
+}
+td{
+    color: blue;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+/* question 9 */
+#timeDisplay{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#timeDisplay h1{
+    color: darkblue;
+}
+
+/* question 10 */
+#game{
+    margin-bottom: 50px;
+
+}

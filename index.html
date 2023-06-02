@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <p data-text="DOM_Handson.">DOM_Handson.</p>
+    </header>
+    <div class="questions">
+        <!-- ************************* Question 1 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q1. </Span>Write the code to access element which is having id as "text"
+            </p>
+            <div class="ans seeCode" id="seeCode1">
+                <button onclick="showHide1(this)">See Code</button>
+                <p class="code" id="code1"><span> Code : </span>document.getElementById("text")</p>
+            </div>
+
+            <p class="ans" id="text"><span>Output : </span>Hello Prince !!</p>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 2 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q2. </Span>Write the code to access element which is having tag as "h1"
+            </p>
+
+            <div class="ans seeCode" id="seeCode2">
+                <button onclick="showHide2(this)">See Code</button>
+                <p class="code" id="code2"><span>Code : </span>document.getElementsByTagName("h1")[0]</p>
+            </div>
+
+            <h1 class="ans"><span>Output : </span>Hello World !!</h1>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 3 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q3. </Span>Write the code to access element which is having class as
+                "box"</p>
+
+            <div class="ans seeCode" id="seeCode3">
+                <button onclick="showHide3(this)">See Code</button>
+                <p class="code" id="code3"><span>Code : </span>document.getElementsByClassName("box")[0]</p>
+            </div>
+
+            <p class="ans box"><span>Output : </span>Hello Box !!</p>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 4 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q4. </Span>&lt;h1&gt;Hello &lt;/h1&gt;<br>
+                Change the heading from "Hello" to "Hello World" using DOM functions
+            </p>
+
+            <div class="ans seeCode" id="seeCode4">
+                <button onclick="showHide4(this)">See Code</button>
+                <pre class="code" id="code4"><span>Code : </span>
+            let change = document.getElementById("change")
+            let isChange = false
+            function changeText(){
+                if (isChange) {
+                    change.innerHTML = "Hello"
+                    isChange = false
+                }
+                else{
+                    change.innerHTML = "Hello World !!"
+                    isChange = true
+                }
+            }</pre>
+            </div>
+
+            <h1 class="ans" id="change" onclick="changeText()"><span>Output : </span>Hello</h1>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 5 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q5. </Span>Create an HTML page having content as Hello world and a button
+                named Replace Text. When user will click on this button page content should be changed to "Welcome to
+                Elevation academy"
+            </p>
+
+            <div class="ans seeCode" id="seeCode5">
+                <button onclick="showHide5(this)">See Code</button>
+                <pre class="code" id="code5"><span>Code : </span>
+            let replace = document.getElementsByClassName("replaceText")[0]
+            let isReplace = false
+            function replaceText(element){
+                if (isReplace) {
+                    element.innerHTML = "Replace Text"
+                    replace.innerHTML = "Hello World !!"
+                    isReplace = false
+                }
+                else{
+                    element.innerHTML = "Old Text"
+                    replace.innerHTML = "Welcome To Elevation Academy !!"
+                    isReplace = true
+                }
+            }
+                </pre>
+            </div>
+
+            <p class="ans replaceText"><span>Output : </span>Hello World !!</p>
+            <button id="replaceBtn" onclick="replaceText(this)">Replace Text</button>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 6 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q6. </Span>&lt;h1&gt;Hello &lt;/h1&gt;<br>
+                Add one style attribute and give text color as red and id attribute and give the id value as "heading"
+                in
+                the above given h1 tag using DOM functions
+            </p>
+
+            <div class="ans seeCode" id="seeCode6">
+                <button onclick="showHide6(this)">See Code</button>
+                <pre class="code" id="code6"><span>Code : </span>
+            let changeSt = document.getElementsByClassName("changeStyle")[0]
+            let isStyle = false
+            function changeStyle(element){
+                if (isStyle) {
+                    element.innerHTML = "Change Style"
+                    changeSt.setAttribute("style","color:black")
+                    changeSt.setAttribute("id","heading")
+                    isStyle = false
+                }
+                else{
+                    element.innerHTML = "Old Style"
+                    changeSt.setAttribute("style","color:red")
+                    isStyle = true
+                }
+            }
+                </pre>
+            </div>
+
+            <div class="ans changeStyleDiv"><span>Output : </span>
+                <h1 class="changeStyle"> Hello !!</h1>
+            </div>
+            <button id="changeStyleBtn" onclick="changeStyle(this)">Change Style</button>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 7 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q7. </Span>
+                Create three cards on HTML page and arrange them using flex property in row or horizontal direction and
+                also create button at the bottom named "Change Flex direction". When user clicks on this button, the
+                cards arrangement should be changed to vertical direction.
+            </p>
+
+            <div class="ans seeCode" id="seeCode7">
+                <button onclick="showHide7(this)">See Code</button>
+                <pre class="code" id="code7"><span>Code : </span>
+            let cardParent = document.getElementById("cardParent")
+            let isFlex = false
+            function changeDirection() {
+                if (isFlex) {
+                    cardParent.style.flexDirection = "row"
+                    isFlex = false
+                }
+                else{
+                    cardParent.style.flexDirection = "column"
+                    isFlex = true
+            
+                }
+            }
+                </pre>
+            </div>
+
+            <div class="ans"><span>Output : </span>
+                <div id="cardParent">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+            </div>
+            <button id="changeDirectionBtn" onclick="changeDirection()">Change Flex Direction</button>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 8 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q8. </Span>What’s the difference between window vs document?</p>
+
+            <div class="ans seeCode" id="seeCode8">
+                <button onclick="showHide8(this)">See Difference</button>
+            </div>
+
+            <div class="ans"><span>Output : </span></div>
+            <div class="ans code" id="code8">
+                <table border="5" cellspacing="0" cellspadding="10px">
+                    <tr>
+                        <th>Window</th>
+                        <th>Document</th>
+                    </tr>
+                    <tr>
+                        <td>- It represents a browser window or frame that displays the contents of the webpage.</td>
+                        <td>- It represents any HTML document or web page that is loaded in the browser.</td>
+                    </tr>
+                    <tr>
+                        <td>- Global objects, functions, and variables of JavaScript are members of the window object.
+                        </td>
+                        <td>- All the tags, elements with attributes in HTML are part of the document.</td>
+                    </tr>
+                    <tr>
+                        <td>- The window is part of BOM, not DOM.</td>
+                        <td>- The document is part of BOM (browser object model) and dom (Document object model)</td>
+                    </tr>
+                    <tr>
+                        <td>- syntax : window.propertyname;</td>
+                        <td>- syntax : document.propertyname;</td>
+                    </tr>
+                    <tr>
+                        <td>- example : window.innerHeight : will return the height of the content area of the browser
+                        </td>
+                        <td>- example : document.title : will return the title of the document</td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- ************************* Question 9 *************************** -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q9. </Span>Write code to implement timer clock using JS -- display
+                HH:MM:SS -- the time should keep updating every second
+            </p>
+
+            <div class="ans" id="timeDisplay"><span>Output : </span><h1 id="displayTime"></h1></div>
+            <hr style="margin-top: 10px;" size="3px" color="grey">
+        </div>
+
+        <!-- Guess the number Game Link -->
+        <div class="quesAns">
+            <p class="ques"><Span class="span">Q10. </Span>Do you want to play - 'Guess The Number Game'</p>
+            <div class="ans"><a href="./guess.html"><button id="game">Click Here</button></a></div>
+        </div>
+    </div>
+    
+
+<!-- </div> -->
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
